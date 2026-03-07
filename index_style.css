@@ -1,0 +1,28 @@
+.title {
+    position: relative;
+
+    font-size: 3.7rem;
+}
+
+#options {
+    width: 100%;
+    position: absolute;
+    top: 5rem;
+
+    align-items: center;
+    text-align: center;
+
+}
+
+.button {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 7em;
+    padding-right: 7em;
+
+    font-size: 1.2rem
+}
