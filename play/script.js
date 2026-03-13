@@ -1,3 +1,4 @@
+let score = 0;
 let sqr;
 function init(){
     sqr = document.getElementById("square");
@@ -19,7 +20,7 @@ document.addEventListener('keyup', onKeyUp);
 
 
 
-
+//TODO: Fix rounding issue leading to square minorly leaving the screen
 function move_sqr(){
     const MoveSpeed = 2
 
@@ -66,10 +67,25 @@ function move_sqr(){
 
 }
 
+function eat_circle(){
+    const circles = Array.from(document.querySelectorAll(".circle"));
+    circles.filter((c) => (
+        Number(sqr.style.top.slice(0,-2)) <= Number(c.style.top.slice(0,-2)) &&
+        (Number(sqr.style.top.slice(0,-2)) + Number(window.getComputedStyle(sqr).getPropertyValue('height').slice(0,-2))) >= (Number(c.style.top.slice(0,-2)) + Number(window.getComputedStyle(c).getPropertyValue('height').slice(0,-2))) &&
+        Number(sqr.style.left.slice(0,-2)) <= Number(c.style.left.slice(0,-2)) &&
+        (Number(sqr.style.left.slice(0,-2)) + Number(window.getComputedStyle(sqr).getPropertyValue('width').slice(0,-2))) >= (Number(c.style.left.slice(0,-2)) + Number(window.getComputedStyle(c).getPropertyValue('width').slice(0,-2)))
+    )).forEach((c) => c.remove());
+}
+
+function update(){
+    move_sqr();
+    eat_circle();
+}
+
 function play(){
     document.removeEventListener('keydown', play);
 
-    setInterval(move_sqr, 10);
+    setInterval(update, 10);
 }
 
 function prepGame(){
