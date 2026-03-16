@@ -16,3 +16,17 @@
     position: absolute;
     z-index: 1;
 }
+
+#UI-top{
+    top: 0px;
+    right: 0px;
+    position: fixed;
+    z-index: 3;
+}
+
+#score{
+    text-align: right;
+    
+    font-family: monospace, sans-serif, Helvetica;
+    font-size: 2em;
+}

@@ -1,4 +1,3 @@
-let score = 0;
 let sqr;
 function init(){
     sqr = document.getElementById("square");
@@ -6,6 +5,14 @@ function init(){
 }
 
 window.onload = init
+
+let score = 0;
+function add_score(addend){
+    counter = document.getElementById("score");
+
+    score += addend;
+    counter.textContent = score;
+}
 
 let keysSet = new Set();
 function onKeyDown(keyEvent){
@@ -68,13 +75,42 @@ function move_sqr(){
 }
 
 function eat_circle(){
+    function remove_circle(c){
+        c.remove();
+        add_score(1);
+    }
+    
     const circles = Array.from(document.querySelectorAll(".circle"));
     circles.filter((c) => (
         Number(sqr.style.top.slice(0,-2)) <= Number(c.style.top.slice(0,-2)) &&
         (Number(sqr.style.top.slice(0,-2)) + Number(window.getComputedStyle(sqr).getPropertyValue('height').slice(0,-2))) >= (Number(c.style.top.slice(0,-2)) + Number(window.getComputedStyle(c).getPropertyValue('height').slice(0,-2))) &&
         Number(sqr.style.left.slice(0,-2)) <= Number(c.style.left.slice(0,-2)) &&
         (Number(sqr.style.left.slice(0,-2)) + Number(window.getComputedStyle(sqr).getPropertyValue('width').slice(0,-2))) >= (Number(c.style.left.slice(0,-2)) + Number(window.getComputedStyle(c).getPropertyValue('width').slice(0,-2)))
-    )).forEach((c) => c.remove());
+    )).forEach((c) => remove_circle(c));
+    
+}
+
+function spawn_circle(){
+    const body = document.getElementsByTagName("body")[0];
+
+    const newCirc = document.createElement("img");
+    newCirc.src = "../assets/circle.png";
+    newCirc.setAttribute('class', "circle");
+    
+    console.log(window.getComputedStyle(newCirc).height);
+    setTimeout(() => console.log(window.getComputedStyle(newCirc).height), 0.25)
+    
+    const min_height = 0;
+    const max_height = (Number(window.innerHeight) - window.getComputedStyle(newCirc).height);
+    const min_width  = 0;
+    const max_width  = (Number(window.innerWidth)  - window.getComputedStyle(newCirc).width);
+
+    const top  = ((Math.random() * (max_height - min_height + 1))+ min_height) + "px";
+    const left = ((Math.random() * (max_width  - min_width  + 1))+ min_width ) + "px";
+    
+    newCirc.setAttribute('style', "left: " + left + "; top: " + top + ";")
+
+    body.appendChild(newCirc);
 }
 
 function update(){
@@ -85,6 +121,7 @@ function update(){
 function play(){
     document.removeEventListener('keydown', play);
 
+    spawn_circle();
     setInterval(update, 10);
 }
 
