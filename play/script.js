@@ -6,6 +6,12 @@ function init(){
 
 window.onload = init
 
+//used to know attributes of circles
+const ghost_cir = document.createElement("img");
+ghost_cir.src = "../assets/circle.png";
+ghost_cir.setAttribute('class', "circle");
+ghost_cir.style.display = "none";
+
 let score = 0;
 function add_score(addend){
     counter = document.getElementById("score");
@@ -97,31 +103,40 @@ function spawn_circle(){
     newCirc.src = "../assets/circle.png";
     newCirc.setAttribute('class', "circle");
     
-    console.log(window.getComputedStyle(newCirc).height);
-    setTimeout(() => console.log(window.getComputedStyle(newCirc).height), 0.25)
-    
-    const min_height = 0;
-    const max_height = (Number(window.innerHeight) - window.getComputedStyle(newCirc).height);
-    const min_width  = 0;
-    const max_width  = (Number(window.innerWidth)  - window.getComputedStyle(newCirc).width);
+    body.appendChild(ghost_cir);
 
-    const top  = ((Math.random() * (max_height - min_height + 1))+ min_height) + "px";
-    const left = ((Math.random() * (max_width  - min_width  + 1))+ min_width ) + "px";
+    const min_height = 0;
+    const max_height = (Number(window.innerHeight) - window.getComputedStyle(ghost_cir).height.slice(0,-2));
+    const min_width  = 0;
+    const max_width  = (Number(window.innerWidth)  - window.getComputedStyle(ghost_cir).width.slice(0,-2));
     
+    const top  = Math.floor((Math.random() * (max_height - min_height + 1))+ min_height) + "px";
+    const left = Math.floor((Math.random() * (max_width  - min_width  + 1))+ min_width ) + "px";
+    
+    body.removeChild(ghost_cir);
+
     newCirc.setAttribute('style', "left: " + left + "; top: " + top + ";")
 
     body.appendChild(newCirc);
 }
 
+function try_spawn_circle(){
+    if (Math.random() <= 0.005){
+        spawn_circle();
+    } else if (document.querySelectorAll(".circle").length == 0){
+        spawn_circle();
+    }
+}
+
 function update(){
     move_sqr();
     eat_circle();
+    try_spawn_circle();
 }
 
 function play(){
     document.removeEventListener('keydown', play);
 
-    spawn_circle();
     setInterval(update, 10);
 }
 
