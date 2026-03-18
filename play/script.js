@@ -1,3 +1,4 @@
+// sqr creation
 let sqr;
 function init(){
     sqr = document.getElementById("square");
@@ -6,20 +7,25 @@ function init(){
 
 window.onload = init
 
-//used to know attributes of circles
+// used to know attributes of circles
 const ghost_cir = document.createElement("img");
 ghost_cir.src = "../assets/circle.png";
 ghost_cir.setAttribute('class', "circle");
 ghost_cir.style.display = "none";
 
-let score = 0;
-function add_score(addend){
-    counter = document.getElementById("score");
+// score creation
+const scoreObj = {
+    actual: 0,
+    set score(val) {
+        this.actual = val;
+        document.getElementById("score").textContent = this.actual;
+    },
+    get score() {
+        return this.actual;
+    },
+};
 
-    score += addend;
-    counter.textContent = score;
-}
-
+// custom key detection to get a constant signal while pressed
 let keysSet = new Set();
 function onKeyDown(keyEvent){
     keysSet.add(keyEvent.code);
@@ -83,7 +89,7 @@ function move_sqr(){
 function eat_circle(){
     function remove_circle(c){
         c.remove();
-        add_score(1);
+        scoreObj.score += 1;
     }
     
     const circles = Array.from(document.querySelectorAll(".circle"));
@@ -123,7 +129,7 @@ function spawn_circle(){
 function try_spawn_circle(){
     if (Math.random() <= 0.005){
         spawn_circle();
-    } else if (document.querySelectorAll(".circle").length == 0){
+    } else if (document.querySelectorAll(".circle").length < 1){
         spawn_circle();
     }
 }
