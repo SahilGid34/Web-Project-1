@@ -48,7 +48,7 @@
 
 #score{
     text-align: right;
-    margin: 0;
+    margin: 8;
     
     font-family: monospace, sans-serif, Helvetica;
     font-size: 2em;
