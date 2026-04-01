@@ -2,6 +2,11 @@
 let sqr;
 function init(){
     sqr = document.getElementById("square");
+
+    //fix score allignment
+    console.log()
+    document.getElementById("score").style["margin-top"] = window.getComputedStyle(document.getElementById("progress-container")).getPropertyValue('height');
+
     prepGame();
 }
 
