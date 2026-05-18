@@ -1,10 +1,8 @@
 // sqr creation
-let sqr;
+const sqr = document.getElementById("square");
 function init(){
-    sqr = document.getElementById("square");
-
+    //TODO: move this somewhere else
     //fix score allignment
-    console.log()
     document.getElementById("score").style["margin-top"] = window.getComputedStyle(document.getElementById("progress-container")).getPropertyValue('height');
 
     prepGame();
@@ -30,6 +28,40 @@ const scoreObj = {
     },
 };
 
+// progress bar creation
+const timerObj = {
+    // all time in ms
+    targetTime: 30_000,
+    currentTime: 0,
+    
+    get percent() {
+        return this.currentTime / this.targetTime;
+    },
+
+    update(time_ms) {
+        this.currentTime += time_ms;
+    },
+
+    reset() {
+        this.currentTime = 0;
+    },
+
+    isDone(){
+        return this.currentTime >= this.targetTime;
+    }
+};
+
+const progressTimerObj = {
+    __proto__: timerObj,
+    progressBar: document.getElementById("progress-time"),
+    
+    update(time_ms) {
+        super.update(time_ms)
+        this.progressBar.style["width"] = (this.percent * 100) + "%";
+    }
+    // Overide Update
+};
+
 // custom key detection to get a constant signal while pressed
 let keysSet = new Set();
 function onKeyDown(keyEvent){
@@ -42,7 +74,8 @@ function onKeyUp(keyEvent){
 document.addEventListener('keydown', onKeyDown);
 document.addEventListener('keyup', onKeyUp);
 
-
+// IntervalID for Update
+let updateID;
 
 //TODO: Fix rounding issue leading to square minorly leaving the screen
 function move_sqr(){
@@ -56,13 +89,13 @@ function move_sqr(){
     let changeY = 0;
 
     if (keysSet.has("KeyW")){
-        changeY = -MoveSpeed;
+        changeY += -MoveSpeed;
     } if (keysSet.has("KeyA")){
-        changeX = -MoveSpeed;
+        changeX += -MoveSpeed;
     } if (keysSet.has("KeyS")){
-        changeY = +MoveSpeed;
+        changeY += +MoveSpeed;
     } if (keysSet.has("KeyD")){
-        changeX = +MoveSpeed;
+        changeX += +MoveSpeed;
     }
     
     if (changeX !== 0 && changeY !== 0){
@@ -132,9 +165,9 @@ function spawn_circle(){
 }
 
 function try_spawn_circle(){
-    if (Math.random() <= 0.005){
+    if (document.querySelectorAll(".circle").length < 1){
         spawn_circle();
-    } else if (document.querySelectorAll(".circle").length < 1){
+    } else if (Math.random() <= 0.003){
         spawn_circle();
     }
 }
@@ -143,12 +176,17 @@ function update(){
     move_sqr();
     eat_circle();
     try_spawn_circle();
+    progressTimerObj.update(10);
+    if (progressTimerObj.isDone()){
+        clearInterval(updateID);
+    }
 }
 
 function play(){
     document.removeEventListener('keydown', play);
 
-    setInterval(update, 10);
+    progressTimerObj.reset();
+    updateID = setInterval(update, 10);
 }
 
 function prepGame(){
