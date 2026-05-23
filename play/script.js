@@ -16,16 +16,33 @@ ghost_cir.src = "../assets/circle.png";
 ghost_cir.setAttribute('class', "circle");
 ghost_cir.style.display = "none";
 
+const shop_container = document.getElementById("shop-container");
+
 // score creation
 const scoreObj = {
-    actual: 0,
+    round_score: 0,
     set score(val) {
-        this.actual = val;
-        document.getElementById("score").textContent = this.actual;
+        this.round_score = val;
+        document.getElementById("score").textContent = this.round_score;
     },
     get score() {
-        return this.actual;
+        return this.round_score;
     },
+
+    full_score: 0,
+    set curency(val) {
+        this.full_score = val;
+        document.getElementById("shop-info-curency").textContent = this.full_score;
+    },
+    get curency() {
+        return this.full_score;
+    },
+
+    transferScore(){
+        this.curency += this.score;
+        this.score = 0;
+    },
+
 };
 
 // progress bar creation
@@ -179,16 +196,24 @@ function update(){
     progressTimerObj.update(10);
     if (progressTimerObj.isDone()){
         clearInterval(updateID);
+        shop_container.style["display"] = "block";
+        scoreObj.transferScore();
     }
 }
 
 function play(){
     document.removeEventListener('keydown', play);
 
-    progressTimerObj.reset();
     updateID = setInterval(update, 10);
 }
 
 function prepGame(){
+    progressTimerObj.reset();
+    progressTimerObj.update(0);
     document.addEventListener('keydown', play);
+}
+
+function closeShop(){
+    shop_container.style["display"] = "none";
+    prepGame();
 }
