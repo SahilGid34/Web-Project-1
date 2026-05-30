@@ -1,0 +1,12 @@
+{
+    "Circle" : {
+        "A" : {
+            "price" : 1,
+            "display" : {
+                "title" : "A of Circle",
+                "image_path" : "Circle/A.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            }
+        }
+    }
+}

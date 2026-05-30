@@ -47,15 +47,45 @@
     transition-property: transform;
 }
 
-#score{
-    text-align: right;;
+#score-container {
+    box-sizing: border-box;
+
     margin-top: 1%;
     margin-right: 0;
     margin-bottom: 0;
     margin-left: 0;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    font-size: 200%;
+}
+
+#score-img {
+    box-sizing: border-box;
+    display: inline-block;
+
+    bottom: 0;
+
+    margin-top: 0;
+
+    height: 0.75em;
+}
+
+#score-text{
+    box-sizing: border-box;
+    display: inline-block;
+
+    bottom: 0;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    text-align: right;
     
     font-family: monospace, sans-serif, Helvetica;
-    font-size: 200%;
+    font-size: 1em;
 }
 
 #shop-container {
@@ -112,10 +142,40 @@
     left: 0;
 }
 
-#shop-info-curency {
+#shop-info-curency-container {
+    box-sizing: border-box;
+
     position: absolute;
     top: 0;
     right: 0;
+
+    font-size: 150%;
+}
+
+#shop-info-curency-img {
+    box-sizing: border-box;
+    display: inline-block;
+
+    bottom: 0;
+
+    margin-top: 0;
+
+    height: 0.75em;
+}
+
+#shop-info-curency-text{
+    box-sizing: border-box;
+    display: inline-block;
+
+    bottom: 0;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    text-align: right;
+    
+    font-family: monospace, sans-serif, Helvetica;
+    font-size: 1em;
 }
 
 #shop-info-continue {
@@ -138,13 +198,58 @@
     bottom: 0;
     box-sizing: border-box;
     
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
     height: calc(85% - 24px);
     
     margin: 8px;
+
+    overflow: hidden;
+    row-gap: 8px;
+
+    justify-content: space-between;
     
     background-color: rgb(223, 208, 217);
 }
 
 .shop-item {
+    margin: inherit;
+    flex-grow: 1;
+
+    font-size: 100%;
+    font-family: sans-serif;
+    text-align: center;
+
+    max-width: calc( (100%/3) - 8px - 8px);
+    container-type: size;
+
+    padding: 8px;
+
+    background-color: rgba(239, 231, 236, 0.65);
+}
+
+.shop-item-title {
+    font-size: 1.5rem;
+    margin: 0;
+    width: 100%;
+}
+
+.shop-item-img {
+    position: relative;
     
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+
+    width: min(100%, calc( ( (100cqh - 1.5rcap - 8px) / 7) * 5));
+    max-height: 100%;
+    aspect-ratio: 5/7;
+}
+
+.shop-item-text {
+    position: relative;
+    font-size: 1em;
+    margin: 0;
+    width: 100%;
+    top: 70%;
 }

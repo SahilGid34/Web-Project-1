@@ -10,7 +10,10 @@
             <div id="progress-container">
                 <div id="progress-time" style="width: 0%"></div>
             </div>
-            <p id="score">0</p>
+            <div id="score-container">
+                <img id="score-img" src="../assets/points.png">
+                <p id="score-text">0</p>
+            </div>
         </div>
 
         <div>
@@ -21,18 +24,24 @@
             <div id="shop-info-container">
                 <p class="shop-info" id="shop-info-title">Shop</p>
                 <p class="shop-info" id="shop-info-due-date">X due in Y rounds</p>
-                <p class="shop-info" id="shop-info-curency">Curency</p>
+                <div class="shop-info" id="shop-info-curency-container">
+                    <img id="shop-info-curency-img" src="../assets/coin2.png">
+                    <p id="shop-info-curency-text">0</p>
+                </div>
                 <button class="shop-info" id="shop-info-continue" onclick="closeShop()">Continue-></button>
             </div>
             <div id="shop-items-container">
-                <div class="shop-item">
-                    <p>a</p>
+                <div class="shop-item" id="shop-item-1">
+                    <div>
+                        <p class="shop-item-title" >Example A of Circle (5)</p>
+                        <div class="shop-item-img" style="background-image: url(../assets/Deck/Circle/A.png);">
+                            <p class="shop-item-text" >Increases chance of Circle</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="shop-item">
-                    <p>a</p>
+                <div class="shop-item" id="shop-item-2">
                 </div>
-                <div class="shop-item">
-                    <p>a</p>
+                <div class="shop-item" id="shop-item-3">
                 </div>
             </div>
         </div>

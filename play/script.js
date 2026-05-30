@@ -3,7 +3,7 @@ const sqr = document.getElementById("square");
 function init(){
     //TODO: move this somewhere else
     //fix score allignment
-    document.getElementById("score").style["margin-top"] = window.getComputedStyle(document.getElementById("progress-container")).getPropertyValue('height');
+    document.getElementById("score-container").style["margin-top"] = window.getComputedStyle(document.getElementById("progress-container")).getPropertyValue('height');
 
     prepGame();
 }
@@ -23,7 +23,7 @@ const scoreObj = {
     round_score: 0,
     set score(val) {
         this.round_score = val;
-        document.getElementById("score").textContent = this.round_score;
+        document.getElementById("score-text").textContent = this.round_score;
     },
     get score() {
         return this.round_score;
@@ -32,7 +32,7 @@ const scoreObj = {
     full_score: 0,
     set curency(val) {
         this.full_score = val;
-        document.getElementById("shop-info-curency").textContent = this.full_score;
+        document.getElementById("shop-info-curency-text").textContent = this.full_score;
     },
     get curency() {
         return this.full_score;
@@ -195,9 +195,7 @@ function update(){
     try_spawn_circle();
     progressTimerObj.update(10);
     if (progressTimerObj.isDone()){
-        clearInterval(updateID);
-        shop_container.style["display"] = "block";
-        scoreObj.transferScore();
+        openShop();
     }
 }
 
@@ -211,6 +209,38 @@ function prepGame(){
     progressTimerObj.reset();
     progressTimerObj.update(0);
     document.addEventListener('keydown', play);
+}
+
+function stockShop(){
+    Array.from(document.querySelectorAll(".shop-item")).forEach(function(element, index, arr) {
+        Array.from(element.children).forEach((e) => e.remove());
+        
+        title = document.createElement("p");
+        title.setAttribute('class', "shop-item-title");
+        title.textContent = "E of E (8)";
+
+        imgDiv = document.createElement("div");
+        imgDiv.setAttribute('class', "shop-item-img");
+        imgDiv.style["background-image"] = "url(../assets/Deck/Circle/A.png)";
+
+        text = document.createElement("p");
+        text.setAttribute("class", "shop-item-text")
+        text.textContent = "EEEEE";
+
+
+        imgDiv.appendChild(text)
+        
+        element.appendChild(title);
+        element.appendChild(imgDiv);
+    });
+}
+
+function openShop(){
+    clearInterval(updateID);
+    stockShop();
+    //move the transfer when an animation is made
+    scoreObj.transferScore();
+    shop_container.style["display"] = "block";
 }
 
 function closeShop(){
