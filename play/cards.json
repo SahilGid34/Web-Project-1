@@ -6,7 +6,497 @@
                 "title" : "A of Circle",
                 "image_path" : "Circle/A.png",
                 "description" : "Increase the chance of a circle randomly spawning"
-            }
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "2" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/2.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "3" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/3.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "4" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/4.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "5" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/5.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "6" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/6.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "7" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/7.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "8" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/8.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "9" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/9.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "10" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/10.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "J" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/J.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "Q" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/Q.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "K" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Circle/K.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        }
+    },
+    "Square" : {
+        "A" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/A.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "2" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/2.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "3" : {
+            "price" : 3,
+            "display" : {
+                "title" : "3 of Square",
+                "image_path" : "Square/3.png",
+                "description" : "Doubles the movement speed of Square after eating a circle"
+            },
+            "method_adder" : "this.activate = function(){ modifiers.square.moveSpeed *= 1.3; setTimeout(() => (modifiers.square.moveSpeed /= 1.3), 3000)};this.onAdd = (() => modifiers.circle.onConsumeCircle.push(this.activate));this.onRemove = (() => modifiers.circle.onConsumeCircle.splice(modifiers.circle.onConsumeCircle.indexOf(this.activate),1));"
+        },
+        "4" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/4.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "5" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/5.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "6" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/6.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "7" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/7.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "8" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/8.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "9" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/9.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "10" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/10.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "J" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/J.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "Q" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/Q.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "K" : {
+            
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Square/K.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        }
+    },
+    "Timer" : {
+        "A" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/A.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "2" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/2.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "3" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/3.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "4" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/4.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "5" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/5.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "6" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/6.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "7" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/7.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "8" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/8.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "9" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/9.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "10" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/10.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "J" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/J.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "Q" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/Q.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "K" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Timer/K.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        }
+    },
+    "Points" : {
+        "A" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/A.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "2" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/2.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "3" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/3.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "4" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/4.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "5" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/5.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "6" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/6.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "7" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/7.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "8" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/8.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "9" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/9.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "10" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/10.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "J" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/J.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "Q" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/Q.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "this.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
+        },
+        "K" : {
+            "price" : 1,
+            "display" : {
+                "title" : "incomplete",
+                "image_path" : "Points/K.png",
+                "description" : "Increase the chance of a circle randomly spawning"
+            },
+            "method_adder" : "Points.onAdd = (() => modifiers.circle.spawnChanceMult *= 1.6); this.onRemove = (() => modifiers.circle.spawnChanceMult /= 1.6);"
         }
     }
 }

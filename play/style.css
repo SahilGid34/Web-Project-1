@@ -70,7 +70,7 @@
 
     margin-top: 0;
 
-    height: 0.75em;
+    height: 1cap;
 }
 
 #score-text{
@@ -160,7 +160,7 @@
 
     margin-top: 0;
 
-    height: 0.75em;
+    height: 1cap;
 }
 
 #shop-info-curency-text{
@@ -236,6 +236,7 @@
 
 .shop-item-img {
     position: relative;
+    left: calc(50% - (min(100%, calc( ( (100cqh - 1.5rcap - 8px) / 7) * 5)) / 2) );
     
     background-repeat: no-repeat;
     background-size: contain;

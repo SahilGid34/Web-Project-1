@@ -6,6 +6,8 @@ function init(){
     document.getElementById("score-container").style["margin-top"] = window.getComputedStyle(document.getElementById("progress-container")).getPropertyValue('height');
 
     prepGame();
+
+    
 }
 
 window.onload = init
@@ -79,6 +81,45 @@ const progressTimerObj = {
     // Overide Update
 };
 
+// modifier and deck creation
+
+// Hard code this when testing locally
+const cardData = (() => (fetch('./cards.json').then(response => {return response.json()})))();
+
+
+function Card(cardJson){
+    this.__proto__ = cardJson;
+    eval(cardJson["method_adder"]);
+}
+
+const modifiers = {
+    square: {
+        moveSpeed: 3,
+    },
+    circle: {
+        minSpawned: 1,
+        spawnChanceMult: 1,
+        onSpawnCircle: [],
+        onConsumeCircle: [],
+    },
+    deck: {
+        arr: [],
+        push: function(card){
+            card.onAdd();
+            this.arr.push(card);
+        },
+        pull: function(ind){
+            card = this.arr[ind];
+            this.arr.splice(ind, 1);
+            card.onRemove();
+        }
+    },
+    hooks: {
+        onSpawnCircle: () => modifiers.circle.onSpawnCircle.forEach((e) => e()),
+        onConsumeCircle: () => modifiers.circle.onConsumeCircle.forEach((e) => e()),
+    }
+}
+
 // custom key detection to get a constant signal while pressed
 let keysSet = new Set();
 function onKeyDown(keyEvent){
@@ -96,7 +137,7 @@ let updateID;
 
 //TODO: Fix rounding issue leading to square minorly leaving the screen
 function move_sqr(){
-    const MoveSpeed = 2
+    const MoveSpeed = Math.round(modifiers.square.moveSpeed)
 
     if (keysSet.size == 0){
         return;
@@ -145,6 +186,8 @@ function eat_circle(){
     function remove_circle(c){
         c.remove();
         scoreObj.score += 1;
+
+        modifiers.hooks.onConsumeCircle()
     }
     
     const circles = Array.from(document.querySelectorAll(".circle"));
@@ -154,7 +197,6 @@ function eat_circle(){
         Number(sqr.style.left.slice(0,-2)) <= Number(c.style.left.slice(0,-2)) &&
         (Number(sqr.style.left.slice(0,-2)) + Number(window.getComputedStyle(sqr).getPropertyValue('width').slice(0,-2))) >= (Number(c.style.left.slice(0,-2)) + Number(window.getComputedStyle(c).getPropertyValue('width').slice(0,-2)))
     )).forEach((c) => remove_circle(c));
-    
 }
 
 function spawn_circle(){
@@ -179,12 +221,14 @@ function spawn_circle(){
     newCirc.setAttribute('style', "left: " + left + "; top: " + top + ";")
 
     body.appendChild(newCirc);
+
+    modifiers.hooks.onSpawnCircle();
 }
 
 function try_spawn_circle(){
-    if (document.querySelectorAll(".circle").length < 1){
+    if (document.querySelectorAll(".circle").length < modifiers.circle.minSpawned){
         spawn_circle();
-    } else if (Math.random() <= 0.003){
+    } else if (Math.random() <= 0.003 * modifiers.circle.spawnChanceMult){
         spawn_circle();
     }
 }
@@ -211,25 +255,50 @@ function prepGame(){
     document.addEventListener('keydown', play);
 }
 
+// Shop functions
 function stockShop(){
+    const suits = ["Circle", "Square", "Points", "Timer"];
+    const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+
     Array.from(document.querySelectorAll(".shop-item")).forEach(function(element, index, arr) {
         Array.from(element.children).forEach((e) => e.remove());
         
-        title = document.createElement("p");
+        const card = cardData[suits[Math.floor(Math.random()*4)]][values[Math.floor(Math.random()*13)]]
+        
+        let title = document.createElement("p");
         title.setAttribute('class', "shop-item-title");
-        title.textContent = "E of E (8)";
+        title.textContent = card.display.title + " (" + card.price + ")";
 
-        imgDiv = document.createElement("div");
+        let imgDiv = document.createElement("div");
         imgDiv.setAttribute('class', "shop-item-img");
-        imgDiv.style["background-image"] = "url(../assets/Deck/Circle/A.png)";
+        imgDiv.style["background-image"] = "url(../assets/Deck/" + card.display.image_path + ")";
 
-        text = document.createElement("p");
+        let text = document.createElement("p");
         text.setAttribute("class", "shop-item-text")
-        text.textContent = "EEEEE";
-
+        text.textContent = card.display.description;
 
         imgDiv.appendChild(text)
         
+        function buy(){
+            if (card.price <= scoreObj.curency){
+                scoreObj.curency -= card.price;
+
+                const c = new Card(card);
+                modifiers.deck.push(c);
+
+                title.textContent = "Sold Out (0)";
+                imgDiv.style["background-image"] = "url(../assets/Deck/Empty.png)";
+                text.textContent = "";
+
+                imgDiv.removeEventListener('click', buy);
+            } else {
+                console.log("no")
+                // add some sort of animation to tell the player
+            }
+        }
+
+        imgDiv.addEventListener('click', buy)
+
         element.appendChild(title);
         element.appendChild(imgDiv);
     });
