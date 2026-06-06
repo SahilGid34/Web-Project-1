@@ -6,8 +6,6 @@ function init(){
     document.getElementById("score-container").style["margin-top"] = window.getComputedStyle(document.getElementById("progress-container")).getPropertyValue('height');
 
     prepGame();
-
-    
 }
 
 window.onload = init
@@ -84,7 +82,9 @@ const progressTimerObj = {
 // modifier and deck creation
 
 // Hard code this when testing locally
-const cardData = (() => (fetch('./cards.json').then(response => {return response.json()})))();
+// stays as a promise? does not get back the object properly
+let cardData;
+fetch('./cards.json').then(response => {cardData = response.json()});
 
 
 function Card(cardJson){
