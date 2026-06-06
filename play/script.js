@@ -83,10 +83,13 @@ const progressTimerObj = {
 
 // Hard code this when testing locally
 // stays as a promise? does not get back the object properly
-function getCardData(){
-    fetch('./cards.json').then(response => {return response.json()});
+async function getCardData(){
+    const rawRes = await fetch('./cards.json');
+    const res = await rawRes.json()
+    return res;
 }
-const cardData = getCardData();
+let cardData;
+getCardData().then((r) => {cardData = r});
 
 function Card(cardJson){
     this.__proto__ = cardJson;
