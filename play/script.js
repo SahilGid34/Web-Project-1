@@ -83,8 +83,7 @@ const progressTimerObj = {
 
 // Hard code this when testing locally
 // stays as a promise? does not get back the object properly
-let cardData;
-fetch('./cards.json').then(response => {cardData = response.json()});
+const cardData = await (await fetch('./cards.json')).json();
 
 
 function Card(cardJson){
@@ -265,15 +264,15 @@ function stockShop(){
         
         const card = cardData[suits[Math.floor(Math.random()*4)]][values[Math.floor(Math.random()*13)]]
         
-        let title = document.createElement("p");
+        const title = document.createElement("p");
         title.setAttribute('class', "shop-item-title");
         title.textContent = card.display.title + " (" + card.price + ")";
 
-        let imgDiv = document.createElement("div");
+        const imgDiv = document.createElement("div");
         imgDiv.setAttribute('class', "shop-item-img");
         imgDiv.style["background-image"] = "url(../assets/Deck/" + card.display.image_path + ")";
 
-        let text = document.createElement("p");
+        const text = document.createElement("p");
         text.setAttribute("class", "shop-item-text")
         text.textContent = card.display.description;
 
